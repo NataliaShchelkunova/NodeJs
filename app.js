@@ -3,11 +3,11 @@ const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
 
-const apiRoutes = require('./src/modules/routes/routes')
+const apiRoutes = require('./src/modules/routes/routes');
 
 app.use(cors());
 
-const url = "mongodb+srv://User:Restart987@cluster0.mttvv.mongodb.net/TestDB?retryWrites=true&w=majority"
+const url = "mongodb+srv://User:Restart987@cluster0.mttvv.mongodb.net/TestDB?retryWrites=true&w=majority";
 mongoose.connect(url);
 
 app.use(express.json());
