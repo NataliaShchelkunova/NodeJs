@@ -42,4 +42,18 @@ module.exports.deleteTask = (req, res) => {
   };
 };
 
+module.exports.clearTask = (req, res) => {
+  const id = req.query.id;
+  if (id) {
+    Task.deleteOne({ _id: id }).then(result => {
+      Task.find().then(result => {
+        res.send({ data: result });
+      });
+    });
+  } else {
+    res.status(422).send('Error! Params not correct');
+  };
+};
+
+
 
