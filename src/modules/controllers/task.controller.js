@@ -13,7 +13,7 @@ module.exports.createNewTask = (req, res) => {
       res.send({ data: result });
     });
   });
-}
+};
 
 module.exports.changeTaskInfo = (req, res) => {
   const { body } = req;
@@ -42,4 +42,12 @@ module.exports.deleteTask = (req, res) => {
   };
 };
 
-
+module.exports.clearTask = (req, res) => {
+  if (Task) {
+    Task.deleteMany({}).then(result => {
+        res.send({ data: result });
+    });
+  } else {
+    res.status(422).send('Error! Params not correct');
+  };
+};
