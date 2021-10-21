@@ -43,11 +43,7 @@ module.exports.deleteTask = (req, res) => {
 };
 
 module.exports.clearTask = (req, res) => {
-  if (Task) {
-    Task.deleteMany({}).then(result => {
+    Task.deleteMany().then(result => {
         res.send({ data: result });
     });
-  } else {
-    res.status(422).send('Error! Params not correct');
-  };
 };
