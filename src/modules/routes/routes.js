@@ -19,5 +19,3 @@ router.delete('/clearTask', clearTask);
 //User routes
 
 module.exports = router;
-
-
