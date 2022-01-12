@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
 
-app.listen(process.env.PORT);
+// app.listen(process.env.PORT);
 const port = process.env.PORT || 8000;
 
 const apiRoutes = require('./src/modules/routes/routes');
