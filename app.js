@@ -3,6 +3,9 @@ const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
 
+app.listen(process.env.PORT);
+const port = process.env.PORT || 8000;
+
 const apiRoutes = require('./src/modules/routes/routes');
 
 app.use(cors());
@@ -13,7 +16,6 @@ mongoose.connect(url);
 app.use(express.json());
 app.use('/', apiRoutes);
 
-const port = 7000;
 app.listen(port, () => {
   console.log('Example app listening on ' + port);
 });
